@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Platforming : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void awake()
+    // a is called before the first frame update
+    private void awake()
     {
 
     }
