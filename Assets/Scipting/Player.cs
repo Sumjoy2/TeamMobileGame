@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -9,20 +10,22 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidbody2d;
     public int Score = 0;
     public GameObject winText;
+   // public GameObject scoreText;
+
+    private TextMeshProUGUI textMeshPro;
 
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
+
+       // textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
+
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            LoadScene("MainMenu");
-        }
-
+        //if tap left move left, if tap right move right
         if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -36,10 +39,20 @@ public class Player : MonoBehaviour
                 transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
             }
         }
+
+        //if player gets too low go to menu
+        if (transform.position.y < -15)
+        {
+            LoadScene("MainMenu");
+        }
+
+        
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        //show score
+        //textMeshPro.text = Score.ToString();
         Score++;
     }
 
