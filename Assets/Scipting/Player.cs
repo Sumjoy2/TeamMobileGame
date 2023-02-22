@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         Application.targetFrameRate = 60;
 
-       // textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
+        // textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
 
     }
 
@@ -38,13 +38,22 @@ public class Player : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
             }
+
+            if (/*raycayst up hit*/)
+            {
+                //disable collider
+            }
+            else if (/*raycast down hit*/)
+            {
+                //enable collider
+            }
         }
 
         //if player gets too low go to menu
-        if (transform.position.y < -15)
+        /*if (transform.position.y < -15)
         {
             LoadScene("MainMenu");
-        }
+        }*/
 
         
     }
@@ -53,19 +62,18 @@ public class Player : MonoBehaviour
     {
         //show score
         //textMeshPro.text = Score.ToString();
-        //  if (other.tag == "Platform")
-        Score++;
-        /*{
-            if (rigidbody2d.velocity.y < 0)
-            {
-                other.enabled = !other.enabled;
-                
-            }
-            else
-            {
-                other.enabled = !other.enabled;
-            }
-        }*/
+
+        //Doesnt allow hitting the platform from other than up
+        if (rigidbody2d.velocity.y < 0)
+        {
+            Collision2D.enabled = !Collision2D.enabled;
+            Score++;
+        }
+        else
+        {
+            Collision2D.enabled = !Collision2D.enabled;
+            Debug.Log(Collision2D.enabled);
+        }
     }
 
     private void LoadScene(string sceneName)
