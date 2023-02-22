@@ -53,7 +53,19 @@ public class Player : MonoBehaviour
     {
         //show score
         //textMeshPro.text = Score.ToString();
+        //  if (other.tag == "Platform")
         Score++;
+        /*{
+            if (rigidbody2d.velocity.y < 0)
+            {
+                other.enabled = !other.enabled;
+                
+            }
+            else
+            {
+                other.enabled = !other.enabled;
+            }
+        }*/
     }
 
     private void LoadScene(string sceneName)
