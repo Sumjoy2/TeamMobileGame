@@ -15,6 +15,7 @@ public class Platforming : MonoBehaviour
     {
         moving = new Vector2(0, downSpeed);
         usableHalfWidth = (Screen.width / 200f) - screenEdge;
+
     }
 
     private void FixedUpdate()

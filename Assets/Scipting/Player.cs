@@ -9,8 +9,10 @@ public class Player : MonoBehaviour
     public float speed = 3.5f;
     Rigidbody2D rigidbody2d;
     public int Score = 0;
-    public GameObject winText;
-   // public GameObject scoreText;
+    public TMP_Text winText;
+    public float uppies = 0.1f;
+    public float downies = 0.1f;
+    // public GameObject scoreText;
 
     private TextMeshProUGUI textMeshPro;
 
@@ -21,6 +23,24 @@ public class Player : MonoBehaviour
 
         // textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
 
+    }
+
+    void Update()
+    {
+        RaycastHit2D up = Physics2D.Raycast(rigidbody2d.position * uppies, Vector2.up);
+        RaycastHit2D down = Physics2D.Raycast(rigidbody2d.position * downies, Vector2.down);
+        if (up.collider != null)
+        {
+            //disable collider
+            GetComponent<CircleCollider2D>().enabled = false;
+            Debug.Log("Help");
+        }
+        if (down.collider != null)
+        {
+            //enable collider
+            GetComponent<CircleCollider2D>().enabled = true;
+            Debug.Log("Uppies");
+        }
     }
 
     private void FixedUpdate()
@@ -38,24 +58,21 @@ public class Player : MonoBehaviour
             {
                 transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0, 0);
             }
-
-            //if (/*raycayst up hit*/)
-            //{
-                //disable collider
-           // }
-           // else if (/*raycast down hit*/)
-            //{
-                //enable collider
-           // }
         }
 
         //if player gets too low go to menu
         if (transform.position.y < -15)
         {
             LoadScene("MainMenu");
+            Score = 0;
         }
 
-        
+        if (Score >= 20)
+        {
+            //winText.enable = true;
+            //yield WaitForSeconds (1);
+            LoadScene("MainMenu");
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -69,5 +86,4 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-
 }

@@ -888,7 +888,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 0, y: 200}
+  m_SizeDelta: {x: 0, y: 200.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271571896
 MonoBehaviour:
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: Starpoint Infinity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a86a3f0ddc011b440a67a84254b607cd, type: 2}
   m_sharedMaterial: {fileID: 1704073178027749610, guid: a86a3f0ddc011b440a67a84254b607cd, type: 2}
@@ -937,8 +937,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 280
+  m_fontSizeBase: 280
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
