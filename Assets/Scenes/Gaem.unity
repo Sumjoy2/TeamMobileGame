@@ -961,9 +961,9 @@ GameObject:
   - component: {fileID: 1438781107}
   - component: {fileID: 1438781110}
   - component: {fileID: 1438781111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TotallyPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,11 +980,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030765740b0098f4e88f8e50d5cb7516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 4
   Score: 0
+  uppies: 1.2
   winText: {fileID: 101875623}
-  uppies: 0.35
-  downies: 0.35
+  scoreText: {fileID: 1465928437}
 --- !u!212 &1438781108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1358,10 +1358,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132604971}
     m_Modifications:
-    - target: {fileID: 1345508884996833025, guid: 36f4be758db164d43a8cbfd4f0fe9d7d, type: 3}
-      propertyPath: x
-      value: 4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1855287093553914923, guid: 36f4be758db164d43a8cbfd4f0fe9d7d, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -7,12 +7,12 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public float speed = 3.5f;
-    Rigidbody2D rigidbody2d;
     public int Score = 0;
-    public TMP_Text winText;
     public float uppies = 0.1f;
-    public float downies = 0.1f;
-    // public GameObject scoreText;
+    public TMP_Text winText;
+    public TMP_Text scoreText;
+
+    Rigidbody2D rigidbody2d;
 
     private TextMeshProUGUI textMeshPro;
 
@@ -28,7 +28,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         RaycastHit2D up = Physics2D.Raycast(rigidbody2d.position * uppies, Vector2.up);
-        RaycastHit2D down = Physics2D.Raycast(rigidbody2d.position * downies, Vector2.down);
+        RaycastHit2D down = Physics2D.Raycast(rigidbody2d.position * -uppies, Vector2.down);
+
+        Vector2 upDebug = transform.TransformDirection(Vector2.up) * uppies;
+        Vector2 downDebug = transform.TransformDirection(Vector2.down) * uppies;
+
+        Debug.DrawRay(rigidbody2d.position, upDebug, Color.red);
+        Debug.DrawRay(rigidbody2d.position, downDebug, Color.green);
+
         if (up.collider != null)
         {
             //disable collider
@@ -67,10 +74,9 @@ public class Player : MonoBehaviour
             Score = 0;
         }
 
-        if (Score >= 20)
+        if (Score >= 15)
         {
             //winText.enable = true;
-            //yield WaitForSeconds (1);
             LoadScene("MainMenu");
         }
     }
