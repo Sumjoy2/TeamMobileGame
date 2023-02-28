@@ -982,8 +982,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   Score: 0
-  uppies: 1.2
-  winText: {fileID: 101875623}
+  uppies: 1.3
+  invTimer: 0.8
+  winText: {fileID: 101875621}
   scoreText: {fileID: 1465928437}
 --- !u!212 &1438781108
 SpriteRenderer:
