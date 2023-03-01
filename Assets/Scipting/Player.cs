@@ -8,9 +8,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 3.5f;
     public int Score = 0;
-    public float uppies = 0.1f;
-    public float invTimer = 0.0f;
-    private float timerCollider;
+    
     public GameObject winText;
     public TMP_Text scoreText;
 
@@ -24,41 +22,6 @@ public class Player : MonoBehaviour
         Application.targetFrameRate = 60;
 
         //textMeshPro = gameObject.GetComponent<TextMeshProUGUI>();
-    }
-
-    void Update()
-    {
-        /*********************
-         * New plan
-         * timer that after up raycast hits something wait .5 to 1 sec then re enable players Circle Collider
-         * ******************/
-        
-
-        RaycastHit2D up = Physics2D.Raycast(rigidbody2d.position * -uppies, Vector2.down);
-
-        Vector2 upDebug = transform.TransformDirection(Vector2.down) * uppies;
-
-        Debug.DrawRay(rigidbody2d.position, upDebug, Color.red);
-
-        if (up.collider != null)
-        {
-            //disable collider
-                GetComponent<CircleCollider2D>().enabled = true;
-                Debug.Log("Help");
-                timerCollider = invTimer;
-        }
-
-        if (timerCollider > 0)
-        {
-            timerCollider -= Time.deltaTime;
-        }
-        else
-        {
-            //enable collider
-            GetComponent<CircleCollider2D>().enabled = false;
-            Debug.Log("Uppies");
-            timerCollider = 0.0f;
-        }
     }
 
     private void FixedUpdate()
