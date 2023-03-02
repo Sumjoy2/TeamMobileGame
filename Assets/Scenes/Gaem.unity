@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 1438781108}
   - component: {fileID: 1438781107}
   - component: {fileID: 1438781110}
-  - component: {fileID: 1438781111}
+  - component: {fileID: 1438781112}
   m_Layer: 3
   m_Name: TotallyPlayer
   m_TagString: Player
@@ -1070,8 +1070,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1438781111
-CircleCollider2D:
+--- !u!61 &1438781112
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1083,9 +1083,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.55}
+  m_Offset: {x: 0, y: 0.57}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.1416667, y: 1.14}
+    newSize: {x: 1.1416667, y: 1.14}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Size: {x: 1.1416667, y: 1.14}
+  m_EdgeRadius: 0
 --- !u!1 &1465928435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132604971}
     m_Modifications:
+    - target: {fileID: 1862705086, guid: 36f4be758db164d43a8cbfd4f0fe9d7d, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1855287093553914923, guid: 36f4be758db164d43a8cbfd4f0fe9d7d, type: 3}
       propertyPath: m_RootOrder
       value: 0

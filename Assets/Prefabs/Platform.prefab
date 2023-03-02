@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1855287093553914923}
   - component: {fileID: 1855287093553914922}
   - component: {fileID: 1345508884996833025}
+  - component: {fileID: 1862705086}
   - component: {fileID: 1904167552}
   m_Layer: 0
   m_Name: Platform
@@ -97,8 +98,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downSpeed: -0.05
-  uppies: 0.5
-  invTimer: 0.8
+--- !u!251 &1862705086
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855287093553915093}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 8
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 125
+  m_UseSideFriction: 0
+  m_UseSideBounce: 1
+  m_SideArc: 1
 --- !u!61 &1904167552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +128,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3}
   m_SpriteTilingProperty:
